@@ -124,7 +124,7 @@ psql -p 5433 -U postgres -d olist_db -c "SELECT * FROM v_customer_features ORDER
 
 **Option 2 : Mode interactif**
 
-1.  Connectez-vous à la base de données :
+1.  Connection à la base de données :
     ```powershell
     psql -p 5433 -U postgres -d olist_db
     ```
