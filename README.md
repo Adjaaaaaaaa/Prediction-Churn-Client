@@ -22,6 +22,7 @@ Face à un taux de churn élevé, l'équipe data science d'Olist a besoin d'iden
 *   `04-features.sql` — requêtes de feature engineering documentées.
 *   `05-vue-finale.sql` — création de la vue analytique `v_customer_features`.
 *   `06-optimisation.sql` — création des index et notes d'optimisation.
+*   `app.py` — Application Streamlit servant de dashboard interactif pour visualiser les données et le risque de churn.
 
 ---
 
@@ -132,6 +133,32 @@ psql -p 5433 -U postgres -d olist_db -c "SELECT * FROM v_customer_features ORDER
     ```sql
     SELECT * FROM v_customer_features LIMIT 10;
     ```
+
+---
+
+## Phase 4 : Dashboard Analytique (Streamlit)
+
+Pour exploiter visuellement les features créées en base de données, un tableau de bord interactif a été développé avec Python et Streamlit. Ce dashboard permet de filtrer les clients, d'observer les KPIs globaux, de visualiser les distributions (récence, montant) et d'identifier la segmentation des clients à risque de churn.
+
+
+### 1. Configuration (.env)
+
+Créer un fichier nommé `.env` à la racine du projet pour permettre à l'application de se connecter à base de données olist_db :
+
+```env
+DB_HOST=localhost
+DB_PORT=5433
+DB_NAME=olist_db
+DB_USER=postgres
+DB_PASSWORD=votre_mot_de_passe
+```
+
+### 3. Lancer le Dashboard
+
+```powershell
+streamlit run app.py
+```
+Une page web s'ouvrira automatiquement dans le navigateur (`http://localhost:8501`) pour afficher le dashboard interactif.
 
 ## Schéma de la Base de Données
 

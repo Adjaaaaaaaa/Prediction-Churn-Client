@@ -1,5 +1,18 @@
 # Fichiers d'environnement (contenant des secrets)
+# Fichier de configuration local (mots de passe, base de données)
 .env
+.env.*
+*.env
+
+# Environnements virtuels Python
+venv/
+env/
+.venv/
+ENV/
+
+# Fichiers compilés Python
+__pycache__/
+*.py[cod]
 
 # Fichiers générés par le système d'exploitation ou l'éditeur
 .DS_Store
